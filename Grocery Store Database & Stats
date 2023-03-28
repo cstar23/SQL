@@ -1,0 +1,29 @@
+
+--Create an adoption list from SmileyPets adoption facility
+
+CREATE TABLE SmileyPets (id INTEGER PRIMARY KEY, Animal TEXT, Age INTEGER, Color TEXT, Quantity INTEGER, Gender TEXT);
+
+INSERT INTO SmileyPets VALUES (1, "Pekingese", 8, "Fawn", 2, "Female");
+INSERT INTO SmileyPets VALUES (2, "Chihuahua", 2, "Brown", 4, "Male");
+INSERT INTO SmileyPets VALUES (3, "Pitbull", 1, "White", 6, "Female");
+INSERT INTO SmileyPets VALUES (4, "Poodle", 6, "Black", 9, "Female");
+INSERT INTO SmileyPets VALUES (5, "Terrier", 4, "Light Brown", 3, "Male");
+INSERT INTO SmileyPets VALUES (6, "Bulldog", 1, "White & Black", 9, "Male");
+INSERT INTO SmileyPets VALUES (7, "Huskey", 3, "White", 8, "Female");
+INSERT INTO SmileyPets VALUES (8, "Shepherd", 1, "Tan", 2, "Male");
+INSERT INTO SmileyPets VALUES (9, "Collie", 7, "Mixed", 7, "Female");
+INSERT INTO SmileyPets VALUES (10, "Hound", 2, "Chocolate", 4, "Female");
+INSERT INTO SmileyPets VALUES (11, "Golden", 5, "Tan", 1, "Male");
+INSERT INTO SmileyPets VALUES (12, "Lab", 12, "Chocolate", 4, "Female");
+INSERT INTO SmileyPets VALUES (13, "Lab", 6, "Yellow", 2, "Female");
+INSERT INTO SmileyPets VALUES (14, "Cocker", 1/2, "Black", 1, "Male");
+INSERT INTO SmileyPets VALUES (15, "Corgi", 4, "Tan", 6, "Males");
+
+--display all of the database.
+SELECT * FROM SmileyPets;
+
+--what dogs are older than 5 years and order by how many each.
+SELECT * FROM SmileyPets WHERE Age > 5 ORDER BY Quantity;
+
+--how many dogs are available for adoption?
+SELECT SUM(quantity) FROM SmileyPets;
