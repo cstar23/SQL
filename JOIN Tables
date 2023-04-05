@@ -1,0 +1,50 @@
+/* Create table about the famous people and more about them */
+
+CREATE TABLE Page_Six (id INTEGER PRIMARY KEY, name TEXT);
+
+INSERT INTO Page_Six VALUES (1, "Blake Lively");
+INSERT INTO Page_Six VALUES (2, "Ryan Reynolds");
+INSERT INTO Page_Six VALUES (3, "Sandra Bullock");
+INSERT INTO Page_Six VALUES (4, "Kenny Rogers");
+INSERT INTO Page_Six VALUES (5, "Dolly Parton");
+INSERT INTO Page_Six VALUES (6, "Eminem");
+INSERT INTO Page_Six VALUES (7, "DOJA CAT");
+
+CREATE TABLE Page_Seven (id INTEGER PRIMARY KEY, born INTEGER, type TEXT);
+
+INSERT INTO Page_Seven VALUES (1, 1980, "Actor");
+INSERT INTO Page_Seven VALUES (2, 1984, "Actor");
+INSERT INTO Page_Seven VALUES (3, 1984, "Actor");
+INSERT INTO Page_Seven VALUES (4, 1941, "Singer");
+INSERT INTO Page_Seven VALUES (5, 1938, "SingerActor");
+INSERT INTO Page_Seven VALUES (6, 1995, "Singer");
+INSERT INTO Page_Seven VALUES (7, 1995, "Singer");
+
+CREATE TABLE Page_Eight (id INTEGER PRIMARY KEY, last_words TEXT);
+
+INSERT INTO Page_Eight VALUES (1, "Age of Adeline");
+INSERT INTO Page_Eight VALUES (2, "Mint Mobile");
+INSERT INTO Page_Eight VALUES (3, "Life’s Rough");
+INSERT INTO Page_Eight VALUES (4, "Island Streams");
+INSERT INTO Page_Eight VALUES (5, "Top Integer");
+INSERT INTO Page_Eight VALUES (6, "Life's Rough");
+INSERT INTO Page_EIGHT VALUES (7, "Mint Mobile");
+
+
+/* Who's last words were Mint Mobile? */
+SELECT name, last_words FROM page_six
+LEFT OUTER JOIN page_eight
+ON page_six.id = page_eight.id
+WHERE last_words = "Mint Mobile";
+
+/* Who was born after 1960 and is an actor? */
+SELECT name, born, type FROM page_six
+LEFT OUTER JOIN page_seven
+ON page_six.id = page_seven.id
+WHERE born > 1960 and type = "actor";
+
+/* Who is a singer born before 1960? */
+SELECT name, born, type FROM page_six
+LEFT OUTER JOIN page_seven
+ON page_six.id = page_seven.id
+WHERE born <= 1960;
