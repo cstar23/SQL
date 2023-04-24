@@ -43,3 +43,9 @@ SELECT track_name, artist_name, popularity
 FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
+
+#I determined the Top 5 dancibility songs
+SELECT track_name, artist_name
+FROM bit_db.Spotifydata
+ORDER by danceability desc
+Limit 5
